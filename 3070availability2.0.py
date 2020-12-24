@@ -130,7 +130,7 @@ def readUniFile(filename):
 
 
     print(unicode_dict)
-
+# COMMENITN
 def main():
     infilename = "3070info.txt"
     infos = readInFile(infilename, "input")

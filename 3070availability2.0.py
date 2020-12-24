@@ -48,15 +48,19 @@ def checkOnURLNewegg(url):
 # Processing: super simple if/else using the stock_bool as condition for the if.  If in stock display checkmark and delimeter (globals).  Both display the 
 #   Else display X mark.  Both display whether item is or is NOT ins tock along with a link underneath for ease of access
 # Output: writes to a file
-def displayStock(stock_bool, url, description, output_file):
+def displayStock(stock_bool, url, description, output_file, unicode_file):
+    symbols = readUniFile(unicode_file)
     # a delimeter to make it even more clear when an item is in stock, will be used to surround the output to the .txt file
-    delimeter = star_yellow*20
-
+    delimeter = symbols["yellow star"]*20
+    checkmark = symbols["checkmark"]
+    red_x = symbols["red heavy x"]
+    print(red_x)
+    print("\u274c")
 
     if stock_bool:
         output_file.write(f"{delimeter}\n{checkmark}The {description} is in stock.\n\t\tLink: {url}\n{delimeter}\n\n")
     else:
-        output_file.write(f"{x_red}The {description} is NOT in stock.\n\t\tLink: {url}\n\n")
+        output_file.write(f"{red_x}The {description} is NOT in stock.\n\t\tLink: {url}\n\n")
 
 '''
 ALWAYS MAKE SURE TO HIT ENTER AT THE END OF EACH LINE, INCLUDING THE LAST
@@ -128,9 +132,8 @@ def readUniFile(filename):
     for key in unicode_dict:
         unicode_dict[key] =  unicode_dict[key][:-1]
 
+    return unicode_dict
 
-    print(unicode_dict)
-# COMMENITN
 def main():
     infilename = "3070info.txt"
     infos = readInFile(infilename, "input")
@@ -139,13 +142,13 @@ def main():
     output_file = createOutFile(outfilename)
     prepOutFile(output_file)
 
-    readUniFile("UnicodeChars.txt")
+    unifilename = "UnicodeChars.txt"
 
     # go over all the row info, passing, respectively, the correct info to the displayStock() and checkonURLxxx() funcs
     for row in range(0, len(infos)):
         if infos[row][0] == "newegg": # if it is a newegg site, indicated by first elem of line, call appropriate func
             # calls displayStock(checkonURLNewegg(url), url, descriptor) since infos is a 2D array where each element is an array containig the sitename, url, and the descriptor as its 3 elements
-            displayStock(checkOnURLNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file)
+            displayStock(checkOnURLNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file, unifilename)
         else: # else it is anotehr site, call appropriate func
             pass
     

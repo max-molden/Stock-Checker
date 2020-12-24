@@ -1,19 +1,19 @@
 It is currently:
-	Date: 12-23-2020
-	Time: 23:05:08
+	Date: 12-24-2020
+	Time: 17:19:22
 
-\u274CThe MSI GeForce RTX 3070 is NOT in stock.
+❌ The MSI GeForce RTX 3070 is NOT in stock.
 		Link: https://www.newegg.com/msi-geforce-rtx-3070-rtx-3070-gaming-x-trio/p/N82E16814137603?Description=geforce%20rtx%203070&cm_re=geforce_rtx%203070-_-14-137-603-_-Product
 
-\u274CThe GIGABYTE GeForce RTX 3070 is NOT in stock.
+❌ The GIGABYTE GeForce RTX 3070 is NOT in stock.
 		Link: https://www.newegg.com/gigabyte-geforce-rtx-3070-gv-n3070gaming-oc-8gd/p/N82E16814932342?Description=geforce%20rtx%203070&cm_re=geforce_rtx%203070-_-14-932-342-_-Product
 
-\u274CThe GIGABYTE AORUS GeForce RTX 3070 is NOT in stock.
+❌ The GIGABYTE AORUS GeForce RTX 3070 is NOT in stock.
 		Link: https://www.newegg.com/gigabyte-geforce-rtx-3070-gv-n3070aorus-m-8gd/p/N82E16814932359?Description=geforce%20rtx%203070&cm_re=geforce_rtx%203070-_-14-932-359-_-Product
 
-\u274CThe ASUS Dual GeForce RTX 3070 is NOT in stock.
+❌ The ASUS Dual GeForce RTX 3070 is NOT in stock.
 		Link: https://www.newegg.com/asus-geforce-rtx-3070-dual-rtx3070-o8g/p/N82E16814126459?Description=geforce%20rtx%203070&cm_re=geforce_rtx%203070-_-14-126-459-_-Product
 
-\u274CThe ZOTAC Gaming GeForce RTX 3070 is NOT in stock.
+❌ The ZOTAC Gaming GeForce RTX 3070 is NOT in stock.
 		Link: https://www.newegg.com/zotac-geforce-rtx-3070-zt-a30700e-10p/p/N82E16814500501?Description=geforce%20rtx%203070&cm_re=geforce_rtx%203070-_-14-500-501-_-Product
 

@@ -6,9 +6,10 @@ from bs4 import BeautifulSoup
 import datetime
 
 # unicode characters to help make it clear if somehting is in or out of stock
+# for now leave them global, it is very difficult to get them to print correctly if storing in a list or a dict
 checkmark = "\u2714 " # checkmark
-x_red = "\u274C " # red heavy X
-star_yellow = "\u2B50" # yellow star
+red_x = "\u274C " # red heavy X
+yellow_star = "\u2B50" # yellow star
 
 # specifically works for newegg as the HTML tags may be (and most likely are) different for different sites
 # a function to check if the item at the passed in url is in stock
@@ -49,16 +50,10 @@ def checkOnURLNewegg(url):
 #   Else display X mark.  Both display whether item is or is NOT ins tock along with a link underneath for ease of access
 # Output: writes to a file
 def displayStock(stock_bool, url, description, output_file, unicode_file):
-    symbols = readUniFile(unicode_file)
-    # a delimeter to make it even more clear when an item is in stock, will be used to surround the output to the .txt file
-    delimeter = symbols["yellow star"]*20
-    checkmark = symbols["checkmark"]
-    red_x = symbols["red heavy x"]
-    print(red_x)
-    print("\u274c")
+    # symbols = readUniFile(unicode_file)
 
     if stock_bool:
-        output_file.write(f"{delimeter}\n{checkmark}The {description} is in stock.\n\t\tLink: {url}\n{delimeter}\n\n")
+        output_file.write(f"{yellow_star*20}\n{checkmark}The {description} is in stock.\n\t\tLink: {url}\n{yellow_star*20}\n\n")
     else:
         output_file.write(f"{red_x}The {description} is NOT in stock.\n\t\tLink: {url}\n\n")
 
@@ -118,21 +113,26 @@ THE LAST char OF THE UNICODE STR IS REMOVED SINCE ALL EXCEPT THE LAST I HIT ENTE
 SO WE NEED A NEW LINE AT THE END OF THE FILE
 i.e. CURSOR SHOULD BE ON AN EMPTY LINE AFTER THE FINAL ENTRY
 '''
-def readUniFile(filename):
-    # read the unicode file, it contains rows each with a symbol name and unicode string
-    symbols = readInFile(filename, "unicode")
+# def readUniFile(filename):
+#     # read the unicode file, it contains rows each with a symbol name and unicode string
+#     symbols = readInFile(filename, "unicode")
 
-    # empty dict to hold the symbols by (key, val) = (name, unicode str)
-    unicode_dict = {}
+#     # # empty dict to hold the symbols by (key, val) = (name, unicode str)
+#     # unicode_dict = {}
 
-    # turn the array symbols into a dictionary so I can call them what I want
-    for symbol in symbols:
-        unicode_dict[symbol[0]] = symbol[1]
+#     # # turn the array symbols into a dictionary so I can call them what I want
+#     # for symbol in symbols:
+#     #     unicode_dict[symbol[0]] = symbol[1]
 
-    for key in unicode_dict:
-        unicode_dict[key] =  unicode_dict[key][:-1]
+#     # for key in unicode_dict:
+#     #     unicode_dict[key] =  unicode_dict[key][:-1]
 
-    return unicode_dict
+#     # return unicode_dict
+
+#     unicode_list = []
+#     for i in range(0, len(symbols)):
+#         unicode_list.append(symbols[i][1])
+#     print(unicode_list[0])
 
 def main():
     infilename = "3070info.txt"
@@ -142,7 +142,7 @@ def main():
     output_file = createOutFile(outfilename)
     prepOutFile(output_file)
 
-    unifilename = "UnicodeChars.txt"
+    # unifilename = "UnicodeChars.txt"
 
     # go over all the row info, passing, respectively, the correct info to the displayStock() and checkonURLxxx() funcs
     for row in range(0, len(infos)):

@@ -1,0 +1,3 @@
+checkmark,\u2714
+red heavy x,\u274C
+yellow star,\u2B50

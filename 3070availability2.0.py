@@ -49,7 +49,7 @@ def checkOnURLNewegg(url):
 # Processing: super simple if/else using the stock_bool as condition for the if.  If in stock display checkmark and delimeter (globals).  Both display the 
 #   Else display X mark.  Both display whether item is or is NOT ins tock along with a link underneath for ease of access
 # Output: writes to a file
-def displayStock(stock_bool, url, description, output_file, unicode_file):
+def displayStock(stock_bool, url, description, output_file):#, unicode_file):
     # symbols = readUniFile(unicode_file)
 
     if stock_bool:
@@ -148,7 +148,7 @@ def main():
     for row in range(0, len(infos)):
         if infos[row][0] == "newegg": # if it is a newegg site, indicated by first elem of line, call appropriate func
             # calls displayStock(checkonURLNewegg(url), url, descriptor) since infos is a 2D array where each element is an array containig the sitename, url, and the descriptor as its 3 elements
-            displayStock(checkOnURLNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file, unifilename)
+            displayStock(checkOnURLNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file)#, unifilename)
         else: # else it is anotehr site, call appropriate func
             pass
     

@@ -49,8 +49,7 @@ def checkOnURLNewegg(url):
 # Processing: super simple if/else using the stock_bool as condition for the if.  If in stock display checkmark and delimeter (globals).  Both display the 
 #   Else display X mark.  Both display whether item is or is NOT ins tock along with a link underneath for ease of access
 # Output: writes to a file
-def displayStock(stock_bool, url, description, output_file):#, unicode_file):
-    # symbols = readUniFile(unicode_file)
+def displayStock(stock_bool, url, description, output_file):
 
     if stock_bool:
         output_file.write(f"{yellow_star*20}\n{checkmark}The {description} is in stock.\n\t\tLink: {url}\n{yellow_star*20}\n\n")
@@ -97,42 +96,18 @@ def createOutFile(outfilename):
 def prepOutFile(output_file):
      # get current date and time at runtime of program
     now = datetime.datetime.now()
+
+    # format the date, there are two commented out options, not sure which I like the best
     # now = now.strftime("%Y-%m-%d %H:%M:%S\n\n")
-    now = now.strftime("It is currently:\n\tDate: %m-%d-%Y\n\tTime: %H:%M:%S\n\n")
+    # now = now.strftime("It is currently:\n\tDate: %m-%d-%Y\n\tTime: %H:%M:%S\n\n")
+    now = now.strftime("It is currently:\n\tDate: %b %d, %Y\n\tTime: %I:%M %p\n\n")
+
 
     # try and print the time zone too
     # mostly bc I normally keep my laptop on EST no matter what, even if I am home in MST
 
     # printing time at top file
     output_file.write(f"{now}")
-
-'''
-ALWAYS MAKE SURE TO HIT ENTER AT THE END OF EACH LINE, INCLUDING THE LAST
-OTHERWISE THERE WILL BE AN ISSUE
-THE LAST char OF THE UNICODE STR IS REMOVED SINCE ALL EXCEPT THE LAST I HIT ENTER TO MAKE ANEW LINE
-SO WE NEED A NEW LINE AT THE END OF THE FILE
-i.e. CURSOR SHOULD BE ON AN EMPTY LINE AFTER THE FINAL ENTRY
-'''
-# def readUniFile(filename):
-#     # read the unicode file, it contains rows each with a symbol name and unicode string
-#     symbols = readInFile(filename, "unicode")
-
-#     # # empty dict to hold the symbols by (key, val) = (name, unicode str)
-#     # unicode_dict = {}
-
-#     # # turn the array symbols into a dictionary so I can call them what I want
-#     # for symbol in symbols:
-#     #     unicode_dict[symbol[0]] = symbol[1]
-
-#     # for key in unicode_dict:
-#     #     unicode_dict[key] =  unicode_dict[key][:-1]
-
-#     # return unicode_dict
-
-#     unicode_list = []
-#     for i in range(0, len(symbols)):
-#         unicode_list.append(symbols[i][1])
-#     print(unicode_list[0])
 
 def main():
     infilename = "3070info.txt"
@@ -142,13 +117,18 @@ def main():
     output_file = createOutFile(outfilename)
     prepOutFile(output_file)
 
-    # unifilename = "UnicodeChars.txt"
+    # vars to help with printing respective site names, false if we haven't printed, true if have
+    #   i.e. it will check if we have printed "new egg sites" and if it has then it will not print it agian, then will print best buy listings, etc.
+    newegg_bool = False
 
     # go over all the row info, passing, respectively, the correct info to the displayStock() and checkonURLxxx() funcs
     for row in range(0, len(infos)):
         if infos[row][0] == "newegg": # if it is a newegg site, indicated by first elem of line, call appropriate func
+            if not newegg_bool:
+                output_file.write("NEWEGG LISTINGS\n\n")
+                newegg_bool = not newegg_bool
             # calls displayStock(checkonURLNewegg(url), url, descriptor) since infos is a 2D array where each element is an array containig the sitename, url, and the descriptor as its 3 elements
-            displayStock(checkOnURLNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file)#, unifilename)
+            displayStock(checkOnURLNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file)
         else: # else it is anotehr site, call appropriate func
             pass
     

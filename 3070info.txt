@@ -3,3 +3,4 @@ newegg,https://www.newegg.com/gigabyte-geforce-rtx-3070-gv-n3070gaming-oc-8gd/p/
 newegg,https://www.newegg.com/gigabyte-geforce-rtx-3070-gv-n3070aorus-m-8gd/p/N82E16814932359?Description=geforce%20rtx%203070&cm_re=geforce_rtx%203070-_-14-932-359-_-Product,GIGABYTE AORUS GeForce RTX 3070
 newegg,https://www.newegg.com/asus-geforce-rtx-3070-dual-rtx3070-o8g/p/N82E16814126459?Description=geforce%20rtx%203070&cm_re=geforce_rtx%203070-_-14-126-459-_-Product,ASUS Dual GeForce RTX 3070
 newegg,https://www.newegg.com/zotac-geforce-rtx-3070-zt-a30700e-10p/p/N82E16814500501?Description=geforce%20rtx%203070&cm_re=geforce_rtx%203070-_-14-500-501-_-Product,ZOTAC Gaming GeForce RTX 3070
+ebay,https://www.ebay.com/i/274597680004?chn=ps&mkevt=1&mkcid=28,PNY GeForce RTX 3070

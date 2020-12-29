@@ -11,7 +11,7 @@ from pytz import reference # for time zone
 checkmark = "\u2714 " # checkmark
 red_x = "\u274C " # red heavy X
 yellow_star = "\u2B50" # yellow star
-dollar_sign = "\u0024"
+dollar_sign = "\U0001F4B2"
 
 # specifically works for newegg as the HTML tags may be (and most likely are) different for different sites
 # a function to check if the item at the passed in url is in stock
@@ -26,15 +26,8 @@ def checkOnUrlNewegg(url):
     webpage = rq.get(url)
     soup = BeautifulSoup(webpage.content, "lxml")
 
-    # an empty string to store the string returned from the availability attribute of HTML
-    #       the stock variable (or whatever IDK HTML) is in a <div> tag, then a <span> tag and is in the variable availability
-    #               will either be OutOfStock or InStock
-    stock_str = ""
-
-    # check through all div tags, the specific one nosto_product is what we want, then get span tag with availability var, then get its value as as str
-    for availability in soup.find_all("div", class_ = "nosto_product"):
-        stock_str = availability.find("span", class_ = "availability")
-        stock_str = stock_str.string
+    # find the specific span tag with class availability and get its text
+    stock_str = soup.find("span", class_ = "availability").get_text()
 
     # if out of stock set to false, in stock set to true, otherwise (if something unexpected) set to error message and return
     if stock_str == "OutOfStock":
@@ -48,15 +41,18 @@ def checkOnUrlNewegg(url):
     return stock_bool
 
 def checkOnUrlEBay(url):
-    # float to store the price of the listing
-    list_price = 0
+    # str to store the price of the listing, dont need it as number
+    list_price = ""
 
     # get the webpage with requests and make a soup from it with BeautifulSoup
     webpage = rq.get(url)
     soup = BeautifulSoup(webpage.content, "lxml")
 
-    x = "WHAT DO NOW?"
-    "IM STOPPING HERE FOR NOW, until tommorrow probs"
+    # find the specific div tag with class display-price and get its text
+    list_price = soup.find("div", class_ = "display-price").get_text()
+
+    return list_price
+        
 
 # a function to display whether or not a specific listing is in stock, provides link for easy copy/paste if want
 # Input: stock_bool (T/F item in stock or not), url(link to site for ease of access), description (simple description of brand and anything else before RTX 3070, plus that as well), output_file (the file to be written to)
@@ -74,7 +70,7 @@ def displayStock(stock_bool, url, description, output_file):
 # Processing: just literally plugs all the info into an f-string
 # Output: writes to a file the information provided in a formatted manner
 def displayPrice(price, url, description, output_file):
-    output_file.write(f"{dollar_sign}The {description} is listed at ${price}.\n\n")
+    output_file.write(f"{dollar_sign*2} The {description} is listed at {price}.\n\n")
 
 '''
 ALWAYS MAKE SURE TO HIT ENTER AT THE END OF EACH LINE, INCLUDING THE LAST
@@ -85,6 +81,7 @@ i.e. CURSOR SHOULD BE ON AN EMPTY LINE AFTER THE FINAL ENTRY
 '''
 # Input: a .txt file that contains urls, item descriptions; both strs, separated by comma
 # Processing: read the file, get all the data, format the data
+# Output: an array containing the file info
 def readInFile(infilename, file_type):
     # open with read capabilites a .txt file to read in information to process
     input_file = open(infilename, "r")
@@ -154,9 +151,9 @@ def main():
             displayStock(checkOnUrlNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file)
         elif infos[row][0] == "ebay": # if it is an ebay site, I want to list the price
             if not ebay_bool:
-                output_file.write("EBAY LISTINGS")
+                output_file.write("EBAY LISTINGS\n\n")
                 ebay_bool = not ebay_bool
-            displayPrice()
+            displayPrice(checkOnUrlEBay(infos[row][1]), infos[row][1], infos[row][2], output_file)
     
     output_file.close() # close file just to be safe, good practice
 

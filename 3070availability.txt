@@ -1,6 +1,6 @@
 It is currently:
-	Date: Dec 28, 2020
-	Time: 08:03 PM Eastern Standard Time
+	Date: Dec 29, 2020
+	Time: 02:33 AM Eastern Standard Time
 
 NEWEGG LISTINGS
 
@@ -18,4 +18,8 @@ NEWEGG LISTINGS
 
 ❌ The ZOTAC Gaming GeForce RTX 3070 is NOT in stock.
 		Link: https://www.newegg.com/zotac-geforce-rtx-3070-zt-a30700e-10p/p/N82E16814500501?Description=geforce%20rtx%203070&cm_re=geforce_rtx%203070-_-14-500-501-_-Product
+
+EBAY LISTINGS
+
+💲💲 The PNY GeForce RTX 3070 is listed at $899.99.
 

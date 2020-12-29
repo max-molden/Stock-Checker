@@ -1,9 +1,10 @@
 # a web scraping bot to check the availability of the GeForce RTX 3070
 # different urls for different sites and models
 
-import requests as rq 
-from bs4 import BeautifulSoup
-import datetime
+import requests as rq # access pages
+from bs4 import BeautifulSoup # web scraping
+import datetime # for time and date info
+from pytz import reference # for time zone
 
 # unicode characters to help make it clear if somehting is in or out of stock
 # for now leave them global, it is very difficult to get them to print correctly if storing in a list or a dict
@@ -96,12 +97,14 @@ def createOutFile(outfilename):
 def prepOutFile(output_file):
      # get current date and time at runtime of program
     now = datetime.datetime.now()
+    # for time zone
+    localtime = reference.LocalTimezone()
 
     # format the date, there are two commented out options, not sure which I like the best
     # now = now.strftime("%Y-%m-%d %H:%M:%S\n\n")
     # now = now.strftime("It is currently:\n\tDate: %m-%d-%Y\n\tTime: %H:%M:%S\n\n")
-    now = now.strftime("It is currently:\n\tDate: %b %d, %Y\n\tTime: %I:%M %p\n\n")
-
+    # now = now.strftime("It is currently:\n\tDate: %b %d, %Y\n\tTime: %I:%M %p\n\n")
+    now = now.strftime("It is currently:\n\tDate: %b %d, %Y\n\tTime: %I:%M %p " + localtime.tzname(now) + "\n\n")
 
     # try and print the time zone too
     # mostly bc I normally keep my laptop on EST no matter what, even if I am home in MST

@@ -12,6 +12,7 @@ checkmark = "\u2714 " # checkmark
 red_x = "\u274C " # red heavy X
 yellow_star = "\u2B50" # yellow star
 dollar_sign = "\U0001F4B2"
+dash = "\u2B24"
 
 # specifically works for newegg as the HTML tags may be (and most likely are) different for different sites
 # a function to check if the item at the passed in url is in stock
@@ -72,13 +73,7 @@ def displayStock(stock_bool, url, description, output_file):
 def displayPrice(price, url, description, output_file):
     output_file.write(f"{dollar_sign*2} The {description} is listed at {price}.\n\t\tLink: {url}\n\n")
 
-'''
-ALWAYS MAKE SURE TO HIT ENTER AT THE END OF EACH LINE, INCLUDING THE LAST
-OTHERWISE THERE WILL BE AN ISSUE WITH THE DESCRIPTION
-THE LAST char OF THE DESCIRPTION IS REMOVED SINCE ALL EXCEPT THE LAST I HIT ENTER TO MAKE ANEW LINE
-SO WE NEED A NEW LINE AT THE END OF THE FILE
-i.e. CURSOR SHOULD BE ON AN EMPTY LINE AFTER THE FINAL ENTRY
-'''
+
 # Input: a .txt file that contains urls, item descriptions; both strs, separated by comma
 # Processing: read the file, get all the data, format the data
 # Output: an array containing the file info
@@ -145,13 +140,13 @@ def main():
     for row in range(0, len(infos)):
         if infos[row][0] == "newegg": # if it is a newegg site, indicated by first elem of line, call appropriate func
             if not newegg_bool:
-                output_file.write("NEWEGG LISTINGS\n\n")
+                output_file.write(f"{dash*45}NEWEGG LISTINGS{dash*45}\n\n")
                 newegg_bool = not newegg_bool
             # calls displayStock(checkonUrlNewegg(url), url, descriptor) since infos is a 2D array where each element is an array containig the sitename, url, and the descriptor as its 3 elements
             displayStock(checkOnUrlNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file)
         elif infos[row][0] == "ebay": # if it is an ebay site, I want to list the price
             if not ebay_bool:
-                output_file.write("EBAY LISTINGS\n\n")
+                output_file.write(f"{dash*45}EBAY LISTINGS{dash*45}\n\n")
                 ebay_bool = not ebay_bool
             displayPrice(checkOnUrlEBay(infos[row][1]), infos[row][1], infos[row][2], output_file)
     
@@ -160,14 +155,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-'''
-put all urls and descriptions into a text file, separate them by a line where it says newegg, or another site later,
-for now just use newegg i guess until i find another site to use
-'''
-
-'''
-kinda clean up code
-put file open/close for i/o files into a func, can be main, probs need to be becuase of globality?
-put unicode in a file and read that in, import it
-'''

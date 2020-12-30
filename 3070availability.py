@@ -49,7 +49,7 @@ def checkOnUrlEBay(url):
     soup = BeautifulSoup(webpage.content, "lxml")
 
     # find the specific div tag with class display-price and get its text
-    list_price = soup.find("div", class_ = "display-price").get_text()
+    list_price = soup.find("span", class_ = "notranslate").get_text()
 
     return list_price
         
@@ -70,7 +70,7 @@ def displayStock(stock_bool, url, description, output_file):
 # Processing: just literally plugs all the info into an f-string
 # Output: writes to a file the information provided in a formatted manner
 def displayPrice(price, url, description, output_file):
-    output_file.write(f"{dollar_sign*2} The {description} is listed at {price}.\n\n")
+    output_file.write(f"{dollar_sign*2} The {description} is listed at {price}.\n\t\tLink: {url}\n\n")
 
 '''
 ALWAYS MAKE SURE TO HIT ENTER AT THE END OF EACH LINE, INCLUDING THE LAST
@@ -99,7 +99,7 @@ def readInFile(infilename, file_type):
     if file_type == "input": # don't want to do this when reading the unicode file
         # removing \n newline character at the end of the product descriptor
         for i in range(0, len(infos)):
-            infos[i][2] = infos[i][2][:-1]
+            infos[i][2] = infos[i][2].rstrip()
 
     return infos
 

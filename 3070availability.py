@@ -5,14 +5,15 @@ import requests as rq # access pages
 from bs4 import BeautifulSoup # web scraping
 import datetime # for time and date info
 from pytz import reference # for time zone
+import time # to track elapsed time of program
 
 # unicode characters to help make it clear if somehting is in or out of stock
 # for now leave them global, it is very difficult to get them to print correctly if storing in a list or a dict
 checkmark = "\u2714 " # checkmark
 red_x = "\u274C " # red heavy X
 yellow_star = "\u2B50" # yellow star
-dollar_sign = "\U0001F4B2"
-dash = "\u2B24"
+dollar_sign = "\U0001F4B2" # green heavy dollar sign
+dot = "\u2B24" # white circle
 
 # specifically works for newegg as the HTML tags may be (and most likely are) different for different sites
 # a function to check if the item at the passed in url is in stock
@@ -98,10 +99,10 @@ def readInFile(infilename, file_type):
 
     return infos
 
-def createOutFile(outfilename):
+def createOutFile(outfilename, mode):
     # open with write (overwrite) capabilities a .txt file to store output
     # the file is UTF-8 encoded so that I can use unicode characters, an X and a check to highlight in/out of stock
-    output_file = open(outfilename, "w", encoding = "UTF-8")
+    output_file = open(outfilename, mode, encoding = "UTF-8")
 
     return output_file
 
@@ -124,11 +125,22 @@ def prepOutFile(output_file):
     output_file.write(f"{now}")
 
 def main():
+    # start the clock
+    start = time.time()
+
+    # file to store run times
+    timefilename = "3070availabilitytimes.txt"
+    time_output_mode = "a"
+    time_output_file = createOutFile(timefilename, time_output_mode)
+
+    # name and read the input file
     infilename = "3070info.txt"
     infos = readInFile(infilename, "input")
 
+    # name, create, and prep (initial info) the output file
     outfilename = "3070availability.txt"
-    output_file = createOutFile(outfilename)
+    output_mode = "w"
+    output_file = createOutFile(outfilename, output_mode)
     prepOutFile(output_file)
 
     # vars to help with printing respective site names, false if we haven't printed, true if have
@@ -140,17 +152,27 @@ def main():
     for row in range(0, len(infos)):
         if infos[row][0] == "newegg": # if it is a newegg site, indicated by first elem of line, call appropriate func
             if not newegg_bool:
-                output_file.write(f"{dash*45}NEWEGG LISTINGS{dash*45}\n\n")
+                output_file.write(f"{dot*45}NEWEGG LISTINGS{dot*45}\n\n")
                 newegg_bool = not newegg_bool
             # calls displayStock(checkonUrlNewegg(url), url, descriptor) since infos is a 2D array where each element is an array containig the sitename, url, and the descriptor as its 3 elements
             displayStock(checkOnUrlNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file)
         elif infos[row][0] == "ebay": # if it is an ebay site, I want to list the price
             if not ebay_bool:
-                output_file.write(f"{dash*45}EBAY LISTINGS{dash*45}\n\n")
+                output_file.write(f"{dot*45}EBAY LISTINGS{dot*45}\n\n")
                 ebay_bool = not ebay_bool
             displayPrice(checkOnUrlEBay(infos[row][1]), infos[row][1], infos[row][2], output_file)
     
-    output_file.close() # close file just to be safe, good practice
+    # total time it takes to run, must be before closing the file so I can write to it
+    elapsed = time.time() - start
+
+    # write time to the end of the output file and also add it to the time file
+    output_file.write(f"Elapse Time = {elapsed}s.")
+    time_output_file.write(datetime.datetime.now().strftime("Date: %b %d, %Y\nTime: %I:%M %p " + reference.LocalTimezone().tzname(datetime.datetime.now()) + f"\nElapsed Time: {elapsed}\n\n"))
+
+
+    # close file just to be safe, good practice
+    output_file.close()
+
 
 
 if __name__ == "__main__":

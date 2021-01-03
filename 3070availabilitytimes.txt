@@ -1,12 +1,40 @@
 Date: Dec 30, 2020
 Time: 09:39 PM Eastern Standard Time
-Elapsed Time: 6.846398830413818
+Elapsed Time: 6.8464s
 
 Date: Dec 30, 2020
 Time: 09:39 PM Eastern Standard Time
-Elapsed Time: 6.8842995166778564
+Elapsed Time: 6.8843s
 
 Date: Dec 30, 2020
 Time: 09:39 PM Eastern Standard Time
-Elapsed Time: 6.7407615184783936
+Elapsed Time: 6.7408s
+
+Date: Jan 03, 2021
+Time: 01:30 PM US Mountain Standard Time
+Elapsed Time: 4.7592s
+
+Date: Jan 03, 2021
+Time: 01:35 PM US Mountain Standard Time
+Elapsed Time: 5.0556s
+
+Date: Jan 03, 2021
+Time: 01:36 PM US Mountain Standard Time
+Elapsed Time: 4.8486s
+
+Date: Jan 03, 2021
+Time: 01:37 PM US Mountain Standard Time
+Elapsed Time: 4.8671s
+
+Date: Jan 03, 2021
+Time: 01:38 PM US Mountain Standard Time
+Elapsed Time: 4.8555s
+
+Date: Jan 03, 2021
+Time: 01:38 PM US Mountain Standard Time
+Elapsed Time: 4.5447s
+
+Date: Jan 03, 2021
+Time: 01:39 PM US Mountain Standard Time
+Elapsed Time: 4.6469s
 

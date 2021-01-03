@@ -106,7 +106,7 @@ def createOutFile(outfilename, mode):
 
     return output_file
 
-def prepOutFile(output_file):
+def prepOutFile(output_file, type):
      # get current date and time at runtime of program
     now = datetime.datetime.now()
     # for time zone
@@ -116,7 +116,11 @@ def prepOutFile(output_file):
     # now = now.strftime("%Y-%m-%d %H:%M:%S\n\n")
     # now = now.strftime("It is currently:\n\tDate: %m-%d-%Y\n\tTime: %H:%M:%S\n\n")
     # now = now.strftime("It is currently:\n\tDate: %b %d, %Y\n\tTime: %I:%M %p\n\n")
-    now = now.strftime("It is currently:\n\tDate: %b %d, %Y\n\tTime: %I:%M %p " + localtime.tzname(now) + "\n\n")
+
+    if type == "output":
+        now = now.strftime("It is currently:\n\tDate: %b %d, %Y\n\tTime: %I:%M %p " + localtime.tzname(now) + "\n\n")
+    elif type == "times":
+        now = now.strftime("Date: %b %d, %Y\nTime: %I:%M %p " + reference.LocalTimezone().tzname(datetime.datetime.now()))
 
     # try and print the time zone too
     # mostly bc I normally keep my laptop on EST no matter what, even if I am home in MST
@@ -141,7 +145,7 @@ def main():
     outfilename = "3070availability.txt"
     output_mode = "w"
     output_file = createOutFile(outfilename, output_mode)
-    prepOutFile(output_file)
+    prepOutFile(output_file, "output")
 
     # vars to help with printing respective site names, false if we haven't printed, true if have
     #   i.e. it will check if we have printed "new egg sites" and if it has then it will not print it agian, then will print best buy listings, etc.
@@ -166,9 +170,9 @@ def main():
     elapsed = time.time() - start
 
     # write time to the end of the output file and also add it to the time file
-    output_file.write(f"Elapse Time = {elapsed}s.")
-    time_output_file.write(datetime.datetime.now().strftime("Date: %b %d, %Y\nTime: %I:%M %p " + reference.LocalTimezone().tzname(datetime.datetime.now()) + f"\nElapsed Time: {elapsed}\n\n"))
-
+    output_file.write(f"Elapsed Time = {elapsed:.4f}s.")
+    prepOutFile(time_output_file, "times")
+    time_output_file.write(f"\nElapsed Time: {elapsed:.4f}s\n\n")
 
     # close file just to be safe, good practice
     output_file.close()

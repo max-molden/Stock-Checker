@@ -78,9 +78,9 @@ def displayPrice(price, url, description, output_file):
 # Input: a .txt file that contains urls, item descriptions; both strs, separated by comma
 # Processing: read the file, get all the data, format the data
 # Output: an array containing the file info
-def readInFile(infilename, file_type):
+def readInFile(infile_name, file_type):
     # open with read capabilites a .txt file to read in information to process
-    input_file = open(infilename, "r")
+    input_file = open(infile_name, "r")
 
     # read all info from file, each line as a string ina list
     lines = input_file.readlines()
@@ -133,19 +133,24 @@ def main():
     start = time.time()
 
     # file to store run times
-    timefilename = "3070availabilitytimes.txt"
+    time_file_name = "3070availabilitytimes.txt"
+    time_output_type = "times"
     time_output_mode = "a"
-    time_output_file = createOutFile(timefilename, time_output_mode)
+    time_output_file = createOutFile(time_file_name, time_output_mode)
+    prepOutFile(time_output_file, time_output_type)
 
     # name and read the input file
-    infilename = "3070info.txt"
-    infos = readInFile(infilename, "input")
+    infile_name = "3070info.txt"
+    infile_type = "input"
+    # infile_mode = 
+    infos = readInFile(infile_name, infile_type)
 
     # name, create, and prep (initial info) the output file
     outfilename = "3070availability.txt"
+    output_type = "output"
     output_mode = "w"
     output_file = createOutFile(outfilename, output_mode)
-    prepOutFile(output_file, "output")
+    prepOutFile(output_file, output_type)
 
     # vars to help with printing respective site names, false if we haven't printed, true if have
     #   i.e. it will check if we have printed "new egg sites" and if it has then it will not print it agian, then will print best buy listings, etc.
@@ -165,13 +170,16 @@ def main():
                 output_file.write(f"{dot*45}EBAY LISTINGS{dot*45}\n\n")
                 ebay_bool = not ebay_bool
             displayPrice(checkOnUrlEBay(infos[row][1]), infos[row][1], infos[row][2], output_file)
-    
+    # total amount of links, just for more stats, printed only to the time file
+    time_output_file.write(f"\nNumber of Links Scraped: {len(infos)}")
+
     # total time it takes to run, must be before closing the file so I can write to it
     elapsed = time.time() - start
 
-    # write time to the end of the output file and also add it to the time file
+    # write time to the end of the output file and also add it to the time file...
     output_file.write(f"Elapsed Time = {elapsed:.4f}s.")
-    prepOutFile(time_output_file, "times")
+
+    # ... and also to the time file both to 4 decimal places
     time_output_file.write(f"\nElapsed Time: {elapsed:.4f}s\n\n")
 
     # close file just to be safe, good practice

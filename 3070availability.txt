@@ -1,6 +1,6 @@
 It is currently:
-	Date: Jan 03, 2021
-	Time: 01:39 PM US Mountain Standard Time
+	Date: Jan 04, 2021
+	Time: 12:16 AM US Mountain Standard Time
 
 ⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤NEWEGG LISTINGS⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤⬤
 
@@ -30,7 +30,7 @@ It is currently:
 💲💲 The (USED) MSI GeForce RTX 3070 Ventus 3x is listed at US $690.00.
 		Link: https://www.ebay.com/itm/MSI-GeForce-RTX-3070-Ventus-3x-OC-Edition-Used/114603690807?epid=16043415378&hash=item1aaee98b37:g:aF4AAOSwcmVf7L~0
 
-💲💲 The MSI GeForce RTX 3070 is listed at US $950.00.
+💲💲 The MSI GeForce RTX 3070 is listed at US $910.00.
 		Link: https://www.ebay.com/itm/MSI-GeForce-RTX-3070-GAMING-X-TRIO-8GB-GDDR6X-Graphics-Card-Unopened/333840053407?epid=8041888279&hash=item4dba6af49f:g:8OcAAOSwGGlf6mMz
 
-Elapse Time = 4.6469s.
+Elapsed Time = 4.4342s.

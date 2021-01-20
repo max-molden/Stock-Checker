@@ -46,3 +46,78 @@ Date: Jan 04, 2021
 Time: 12:16 AM US Mountain Standard Time
 Elapsed Time: 4.4342s
 
+Date: Jan 04, 2021
+Time: 12:29 AM US Mountain Standard Time
+Number of Links Scraped: 9
+Elapsed Time: 4.4162s
+
+Date: Jan 04, 2021
+Time: 12:30 AM US Mountain Standard Time
+Number of Links Scraped: 9
+Elapsed Time: 4.5803s
+
+Date: Jan 19, 2021
+Time: 11:41 PM Eastern Standard Time
+Number of Links Scraped: 7
+Elapsed Time: 5.5081s
+
+Date: Jan 19, 2021
+Time: 11:43 PM Eastern Standard Time
+Number of Links Scraped: 7
+Elapsed Time: 5.9166s
+
+Date: Jan 19, 2021
+Time: 11:43 PM Eastern Standard Time
+Number of Links Scraped: 7
+Elapsed Time: 5.4246s
+
+Date: Jan 19, 2021
+Time: 11:45 PM Eastern Standard Time
+Number of Links Scraped: 7
+Elapsed Time: 5.3925s
+
+Date: Jan 19, 2021
+Time: 11:45 PM Eastern Standard Time
+Number of Links Scraped: 7
+Elapsed Time: 5.4240s
+
+Date: Jan 19, 2021
+Time: 11:50 PM Eastern Standard Time
+Number of Links Scraped: 7
+Elapsed Time: 5.8059s
+
+Date: Jan 20, 2021
+Time: 12:21 PM Eastern Standard Time
+Number of Links Scraped: 7
+Elapsed Time: 5.4232s
+
+Date: Jan 20, 2021
+Time: 12:27 PM Eastern Standard Time
+Number of Links Scraped: 8
+Elapsed Time: 7.2621s
+
+Date: Jan 20, 2021
+Time: 12:31 PM Eastern Standard Time
+Number of Links Scraped: 8
+Elapsed Time: 6.9783s
+
+Date: Jan 20, 2021
+Time: 12:31 PM Eastern Standard Time
+Number of Links Scraped: 8
+Elapsed Time: 7.1217s
+
+Date: Jan 20, 2021
+Time: 12:33 PM Eastern Standard Time
+Number of Links Scraped: 8
+Elapsed Time: 7.2700s
+
+Date: Jan 20, 2021
+Time: 12:34 PM Eastern Standard Time
+Number of Links Scraped: 8
+Elapsed Time: 7.3019s
+
+Date: Jan 20, 2021
+Time: 12:34 PM Eastern Standard Time
+Number of Links Scraped: 8
+Elapsed Time: 7.0146s
+

@@ -13,7 +13,8 @@ checkmark = "\u2714 " # checkmark
 red_x = "\u274C " # red heavy X
 yellow_star = "\u2B50" # yellow star
 dollar_sign = "\U0001F4B2" # green heavy dollar sign
-dot = "\u2B24" # white circle
+dot = "\U0001F535" # white circle
+yellow_bolt = "\u26A1"
 
 # specifically works for newegg as the HTML tags may be (and most likely are) different for different sites
 # a function to check if the item at the passed in url is in stock
@@ -46,14 +47,20 @@ def checkOnUrlEBay(url):
     # str to store the price of the listing, dont need it as number
     list_price = ""
 
-    # get the webpage with requests and make a soup from it with BeautifulSoup
-    webpage = rq.get(url)
-    soup = BeautifulSoup(webpage.content, "lxml")
+    # try and scrape the link, since it is ebay the auction might end and there will be an error, in this case go to the except block
+    try:
+        # get the webpage with requests and make a soup from it with BeautifulSoup
+        webpage = rq.get(url)
+        soup = BeautifulSoup(webpage.content, "lxml")
 
-    # find the specific div tag with class display-price and get its text
-    list_price = soup.find("span", class_ = "notranslate").get_text()
+        # find the specific div tag with class display-price and get its text
+        list_price = soup.find("span", class_ = "notranslate").get_text()
 
-    return list_price
+        return list_price
+
+    # if this block is hit there was some error with the link provided, most likekly that the auction eneded and an error will be returned so it can be accurately reflected in the output file
+    except: 
+        return "error"
         
 
 # a function to display whether or not a specific listing is in stock, provides link for easy copy/paste if want
@@ -72,7 +79,10 @@ def displayStock(stock_bool, url, description, output_file):
 # Processing: just literally plugs all the info into an f-string
 # Output: writes to a file the information provided in a formatted manner
 def displayPrice(price, url, description, output_file):
-    output_file.write(f"{dollar_sign*2} The {description} is listed at {price}.\n\t\tLink: {url}\n\n")
+    if price == "error":
+        output_file.write(f"{yellow_bolt*5} There was a problem with this eBay link.  Please check the link and auction status. {yellow_bolt*5}\n\n")
+    else:
+        output_file.write(f"{dollar_sign*2} The {description} is listed at {price}.\n\t\tLink: {url}\n\n")
 
 
 # Input: a .txt file that contains urls, item descriptions; both strs, separated by comma
@@ -161,13 +171,13 @@ def main():
     for row in range(0, len(infos)):
         if infos[row][0] == "newegg": # if it is a newegg site, indicated by first elem of line, call appropriate func
             if not newegg_bool:
-                output_file.write(f"{dot*45}NEWEGG LISTINGS{dot*45}\n\n")
+                output_file.write(f"NEWEGG LISTINGS {dot*60}\n\n")
                 newegg_bool = not newegg_bool
             # calls displayStock(checkonUrlNewegg(url), url, descriptor) since infos is a 2D array where each element is an array containig the sitename, url, and the descriptor as its 3 elements
             displayStock(checkOnUrlNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file)
         elif infos[row][0] == "ebay": # if it is an ebay site, I want to list the price
             if not ebay_bool:
-                output_file.write(f"{dot*45}EBAY LISTINGS{dot*45}\n\n")
+                output_file.write(f"EBAY LISTINGS {dot*61}\n\n")
                 ebay_bool = not ebay_bool
             displayPrice(checkOnUrlEBay(infos[row][1]), infos[row][1], infos[row][2], output_file)
     # total amount of links, just for more stats, printed only to the time file

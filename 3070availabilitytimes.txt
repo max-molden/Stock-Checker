@@ -46,7 +46,6 @@ Date: Jan 04, 2021
 Time: 12:16 AM US Mountain Standard Time
 Elapsed Time: 4.4342s
 
-<<<<<<< HEAD
 Date: Jan 04, 2021
 Time: 12:29 AM US Mountain Standard Time
 Number of Links Scraped: 9
@@ -121,33 +120,4 @@ Date: Jan 20, 2021
 Time: 12:34 PM Eastern Standard Time
 Number of Links Scraped: 8
 Elapsed Time: 7.0146s
-=======
-Date: Jan 06, 2021
-Time: 09:56 PM Eastern Standard Time
-
-Date: Jan 06, 2021
-Time: 09:56 PM Eastern Standard Time
-Number of Links Scraped: 7
-Elapsed Time: 5.5917s
-
-Date: Jan 06, 2021
-Time: 09:57 PM Eastern Standard Time
-Number of Links Scraped: 7
-Elapsed Time: 4.8784s
-
-Date: Jan 06, 2021
-Time: 09:57 PM Eastern Standard Time
-Number of Links Scraped: 7
-Elapsed Time: 4.7939s
-
-Date: Jan 06, 2021
-Time: 09:59 PM Eastern Standard Time
-Number of Links Scraped: 7
-Elapsed Time: 4.5867s
-
-Date: Jan 06, 2021
-Time: 09:59 PM Eastern Standard Time
-Number of Links Scraped: 7
-Elapsed Time: 4.9628s
->>>>>>> 3f13fe68499816e2d338c05da9b609fe0a05628b
 

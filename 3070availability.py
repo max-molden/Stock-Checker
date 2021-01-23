@@ -167,19 +167,25 @@ def main():
     newegg_bool = False
     ebay_bool = False
 
+    # to keep track of the current link number
+    link_counter = 1
+
     # go over all the row info, passing, respectively, the correct info to the displayStock() and checkonURLxxx() funcs
     for row in range(0, len(infos)):
         if infos[row][0] == "newegg": # if it is a newegg site, indicated by first elem of line, call appropriate func
             if not newegg_bool:
                 output_file.write(f"NEWEGG LISTINGS {dot*60}\n\n")
                 newegg_bool = not newegg_bool
+            output_file.write(str(link_counter) + ".\t")
             # calls displayStock(checkonUrlNewegg(url), url, descriptor) since infos is a 2D array where each element is an array containig the sitename, url, and the descriptor as its 3 elements
             displayStock(checkOnUrlNewegg(infos[row][1]),  infos[row][1], infos[row][2], output_file)
         elif infos[row][0] == "ebay": # if it is an ebay site, I want to list the price
             if not ebay_bool:
                 output_file.write(f"EBAY LISTINGS {dot*61}\n\n")
                 ebay_bool = not ebay_bool
+            output_file.write(str(link_counter) + ".\t")
             displayPrice(checkOnUrlEBay(infos[row][1]), infos[row][1], infos[row][2], output_file)
+        link_counter += 1
     # total amount of links, just for more stats, printed only to the time file
     time_output_file.write(f"\nNumber of Links Scraped: {len(infos)}")
 

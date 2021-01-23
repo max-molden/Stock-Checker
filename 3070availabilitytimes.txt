@@ -121,3 +121,45 @@ Time: 12:34 PM Eastern Standard Time
 Number of Links Scraped: 8
 Elapsed Time: 7.0146s
 
+Date: Jan 21, 2021
+Time: 03:45 PM Eastern Standard Time
+Number of Links Scraped: 8
+Elapsed Time: 7.0401s
+
+Date: Jan 23, 2021
+Time: 04:47 PM Eastern Standard Time
+Number of Links Scraped: 8
+Elapsed Time: 8.3498s
+
+Date: Jan 23, 2021
+Time: 04:57 PM Eastern Standard TimeDate: Jan 23, 2021
+Time: 04:58 PM Eastern Standard Time
+Number of Links Scraped: 20
+Elapsed Time: 23.7258s
+
+Date: Jan 23, 2021
+Time: 04:59 PM Eastern Standard Time
+Number of Links Scraped: 20
+Elapsed Time: 22.8640s
+
+Date: Jan 23, 2021
+Time: 05:00 PM Eastern Standard Time
+Number of Links Scraped: 20
+Elapsed Time: 24.2946s
+
+Date: Jan 23, 2021
+Time: 05:01 PM Eastern Standard Time
+Number of Links Scraped: 20
+Elapsed Time: 20.8397s
+
+Date: Jan 23, 2021
+Time: 05:05 PM Eastern Standard TimeDate: Jan 23, 2021
+Time: 05:05 PM Eastern Standard Time
+Number of Links Scraped: 20
+Elapsed Time: 22.2084s
+
+Date: Jan 23, 2021
+Time: 05:07 PM Eastern Standard Time
+Number of Links Scraped: 20
+Elapsed Time: 22.1454s
+

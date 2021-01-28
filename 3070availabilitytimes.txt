@@ -163,3 +163,8 @@ Time: 05:07 PM Eastern Standard Time
 Number of Links Scraped: 20
 Elapsed Time: 22.1454s
 
+Date: Jan 26, 2021
+Time: 11:22 PM Eastern Standard Time
+Number of Links Scraped: 20
+Elapsed Time: 21.9846s
+

@@ -201,7 +201,5 @@ def main():
     # close file just to be safe, good practice
     output_file.close()
 
-
-
 if __name__ == "__main__":
     main()

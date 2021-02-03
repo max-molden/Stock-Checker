@@ -168,3 +168,8 @@ Time: 11:22 PM Eastern Standard Time
 Number of Links Scraped: 20
 Elapsed Time: 21.9846s
 
+Date: Feb 03, 2021
+Time: 12:40 AM Eastern Standard Time
+Number of Links Scraped: 20
+Elapsed Time: 28.3007s
+

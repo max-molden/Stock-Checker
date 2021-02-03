@@ -1,6 +1,6 @@
 It is currently:
-	Date: Jan 26, 2021
-	Time: 11:22 PM Eastern Standard Time
+	Date: Feb 03, 2021
+	Time: 12:40 AM Eastern Standard Time
 
 NEWEGG LISTINGS 🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵
 
@@ -38,7 +38,7 @@ EBAY LISTINGS 🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵�
 
 11.	⚡⚡⚡⚡⚡ There was a problem with this eBay link.  Please check the link and auction status. ⚡⚡⚡⚡⚡
 
-12.	💲💲 The ASUS Dual NVIDIA GeForce RTX 3070 is listed at US $899.99.
+12.	💲💲 The ASUS Dual NVIDIA GeForce RTX 3070 is listed at US $949.99.
 		Link: https://www.ebay.com/itm/ASUS-Dual-NVIDIA-GeForce-RTX-3070-OC-Edition-Gaming-Graphics-Card-8GB-FAST/224258046869?epid=7042244847&_trkparms=ispr%3D1&hash=item3436d23b95:g:bWEAAOSwW8VfxStx&amdata=enc%3AAQAFAAACcBaobrjLl8XobRIiIML1V4Imu%252Fn%252BzU5L90Z278x5ickkgCVySCgrNFPU8Iu85TabMNV%252BfYM31WmmuFeSKGe7FXzh09VC5F6dRD7ajSN0Yf7NbXTOhu9R7hoWbY0D%252Fw3uzW2%252FAI8XGVwtu5rx9uDWNwcqjWt7v%252BVWHus5o8p64BoIYE%252F7F4upHNRh%252BIwiH%252B%252BevSRKpDCJ8BkcWKDLuQ1ie4c1ZrfXeQ8TBy9RgkFo%252BjnGJVj0PPAnE70jfR%252F%252FQtT%252FIKIKr%252F8MXRftmDV69iQnXBJfKkmOsL3ZczqTHaDYiqgpDk%252B8wQ4G4N5rXFp%252FCcYMxxnAQn0fe5%252FEXqEJV0VSPrmvapzJUbDKop2aVfln5Zom8cgl725U%252Ftaz%252Fmd0oMB8ImLFOHc0QxG%252FvyZ%252B4FGpBq9Yas1JrQFCDGhd2HO%252B6IA%252FqkSNRbkPNHTkeitTD48oNPL0MfaHrViZ%252BmnHRNebdH%252FyGp6nzQkrURdg4DA537auGzkVjRkyOOygJekE8TiY1mJxRg1ZHmrDWuUwfzCnwyI%252B3GH3K8ABd3qrJYhcC9dFQRnijG3vCV3j%252Fps1%252B16gNru29P4%252B0FoNtYFy0DDS5ldafOqJv4goe04f00mah6TGWoJXJCDAtFpGFN2Z9jzrWh5AieQ6Rx48PfTZm1XtRXGri4WMmVXvoYh8jkIAFR3aj2tsAw%252F4L2zvaAXY45U7EpidI8lLrSBmzU3VErG3HC%252F0uRejxFuqaCxf%252BdL3n%252Bd3hjdaaNXo8ZuFgTgrM0cabzILFku%252BdemIFYAAXEZYVnyyyBaxhpckZMx6%252BujXD4%252BCpmYJ87Flyyc347aXfT3Zxw%253D%253D%7Ccksum%3A224258046869b10fe7180a44455fb48e30d6b58fdc3f%7Campid%3APL_CLK%7Cclp%3A2334524
 
 13.	⚡⚡⚡⚡⚡ There was a problem with this eBay link.  Please check the link and auction status. ⚡⚡⚡⚡⚡
@@ -52,7 +52,8 @@ EBAY LISTINGS 🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵�
 
 17.	⚡⚡⚡⚡⚡ There was a problem with this eBay link.  Please check the link and auction status. ⚡⚡⚡⚡⚡
 
-18.	💲💲 The EVGA GeForce RTX 3070 XC3 is listed at US $899.99.
+18.	💲💲 The EVGA GeForce RTX 3070 XC3 is listed at 
+										US $899.99.
 		Link: https://www.ebay.com/itm/EVGA-GeForce-RTX-3070-XC3-ULTRA-GAMING-8GB-NVIDIA-GPU-FREE-SHIP-NEW/143923727782?hash=item218285cda6:g:~8QAAOSwMolgDH0G
 
 19.	💲💲 The NVIDIA GeForce RTX 3070 8GB GDDR6 is listed at 
@@ -62,4 +63,4 @@ EBAY LISTINGS 🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵�
 20.	💲💲 The ASUS Dual GeForce RTX 3070 OC is listed at US $793.00.
 		Link: https://www.ebay.com/itm/ASUS-Dual-GeForce-RTX-3070-OC-Graphics-Card/284158082784?hash=item4229243ee0:g:6FUAAOSworNgC0al
 
-Elapsed Time = 21.9846s.
+Elapsed Time = 28.3007s.

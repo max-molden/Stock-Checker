@@ -80,7 +80,7 @@ def displayStock(stock_bool, url, description, output_file):
 # Output: writes to a file the information provided in a formatted manner
 def displayPrice(price, url, description, output_file):
     if price == "error":
-        output_file.write(f"{yellow_bolt*5} There was a problem with this eBay link.  Please check the link and auction status. {yellow_bolt*5}\n\n")
+        output_file.write(f"{yellow_bolt*5} There was a problem with this eBay link.  Please check the link and/or auction status. {yellow_bolt*5}\n\n")
     else:
         output_file.write(f"{dollar_sign*2} The {description} is listed at {price}.\n\t\tLink: {url}\n\n")
 

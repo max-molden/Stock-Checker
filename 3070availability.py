@@ -34,12 +34,11 @@ def checkOnUrlNewegg(url):
 
     # if out of stock set to false, in stock set to true, otherwise (if something unexpected) set to error message and return
     if stock_str == "OutOfStock":
-        stock_bool == False
+        stock_bool = False
     elif stock_str == "InStock":
         stock_bool = True
     else:
         stock_bool = "ERROR: Could not get stock information, please check webpage and url; Try again."
-        return stock_bool
 
     return stock_bool
 

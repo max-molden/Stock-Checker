@@ -25,22 +25,39 @@ def checkOnUrlNewegg(url):
     # T/F value for if the item is in stock or not
     stock_bool = None
 
-    # get the webpage with requests and make a soup from it with BeautifulSoup
-    webpage = rq.get(url)
-    soup = BeautifulSoup(webpage.content, "lxml")
+    try:
+        # get the webpage with requests and make a soup from it with BeautifulSoup
+        webpage = rq.get(url)
+        soup = BeautifulSoup(webpage.content, "lxml")
 
-    # find the specific span tag with class availability and get its text
-    stock_str = soup.find("span", class_ = "availability").get_text()
+        # find the specific span tag with class availability and get its text
+        stock_str = soup.find("span", class_ = "availability").get_text()
 
-    # if out of stock set to false, in stock set to true, otherwise (if something unexpected) set to error message and return
-    if stock_str == "OutOfStock":
-        stock_bool = False
-    elif stock_str == "InStock":
-        stock_bool = True
-    else:
-        stock_bool = "ERROR: Could not get stock information, please check webpage and url; Try again."
+        # if out of stock set to false, in stock set to true, otherwise (if something unexpected) set to error message and return
+        if stock_str == "OutOfStock":
+            stock_bool = False
+        elif stock_str == "InStock":
+            stock_bool = True
+        else:
+            stock_bool = "ERROR: Could not get stock information, please check webpage and url; Try again."
 
-    return stock_bool
+        return stock_bool
+        
+    except:
+        return "error"
+
+    # # find the specific span tag with class availability and get its text
+    # stock_str = soup.find("span", class_ = "availability").get_text()
+
+    # # if out of stock set to false, in stock set to true, otherwise (if something unexpected) set to error message and return
+    # if stock_str == "OutOfStock":
+    #     stock_bool = False
+    # elif stock_str == "InStock":
+    #     stock_bool = True
+    # else:
+    #     stock_bool = "ERROR: Could not get stock information, please check webpage and url; Try again."
+
+    # return stock_bool
 
 def checkOnUrlEBay(url):
     # str to store the price of the listing, dont need it as number
@@ -68,7 +85,9 @@ def checkOnUrlEBay(url):
 #   Else display X mark.  Both display whether item is or is NOT ins tock along with a link underneath for ease of access
 # Output: writes to a file the information provided in a formatted manner
 def displayStock(stock_bool, url, description, output_file):
-    if stock_bool:
+    if stock_bool == "error":
+        output_file.write(f"{yellow_bolt*5} There was a problem with this Newegg link.  Please check the link and/or page status. {yellow_bolt*5}\n\n")
+    elif stock_bool:
         output_file.write(f"{yellow_star*20}\n{checkmark}The {description} is in stock.\n\t\tLink: {url}\n{yellow_star*20}\n\n")
     else:
         output_file.write(f"{red_x}The {description} is NOT in stock.\n\t\tLink: {url}\n\n")
